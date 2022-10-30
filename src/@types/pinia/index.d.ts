@@ -1,0 +1,1 @@
+declare module "@/stores/list"; // 저장소 , typescript로 바꾸면서 지원하지 않는 모듈을 따로 지정해줘야한다

@@ -37,23 +37,7 @@
       db: update.db
     })
 //------------------------- submit 에러 메세지 -------------------------
-  const rules = reactive<FormRules> ({
-    front: [
-      { required: true, 
-        message: 'Please input front-end', 
-        trigger: 'blur' }
-    ],
-    back: [
-        { required: true,
-          message: 'Please input back-end',
-          trigger: 'blur' }
-    ],
-    db: [
-        { required: true,
-          message: 'Please input database',
-          trigger: 'blur'}
-    ]
-  })
+
 //----------------------- submit, reset btn event ------------------------
   const submitForm = async (formEl: FormInstance | undefined) => {
     if (!formEl) return
@@ -98,7 +82,7 @@
 <!----------------------------------------------------------------------------------->
   <h1>기술사항 {{num ? '수정':'등록'}}</h1>
   
-  <el-form ref="ruleFormRef" :model="ruleForm" :rules="rules" label-width="120px">
+  <el-form ref="ruleFormRef" :model="ruleForm" label-width="120px">
     <el-form-item label="Front-end" prop="front">
       <el-input v-model="ruleForm.front" />
     </el-form-item>

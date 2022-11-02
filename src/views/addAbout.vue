@@ -81,44 +81,6 @@
     { required: true, 
       message: 'Please input Email', 
       trigger: 'blur' },
-    ],    
-     front: [
-      { required: true, 
-        message: 'Please input front-end', 
-        trigger: 'blur' }
-    ],
-    back: [
-        { required: true,
-          message: 'Please input back-end',
-          trigger: 'blur' }
-    ],
-    db: [
-        { required: true,
-          message: 'Please input database',
-          trigger: 'blur'}
-    ],
-    pname: [
-        { required: true,
-          message: 'Please input project name',
-          trigger: 'blur'}
-    ],
-    pcontent: [
-        { required: true,
-          message: 'Please input project content',
-          trigger: 'blur'}
-    ],
-    company: [
-      { required: true,
-          message: 'Please input company',
-          trigger: 'blur'}
-    ],
-    period: [
-      { required: true,
-          message: 'Please input period',
-          trigger: 'blur'}
-    ],
-    remark: [
-      { required: false }
     ]
   })
 

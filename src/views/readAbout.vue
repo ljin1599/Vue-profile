@@ -30,7 +30,7 @@
     <el-col :span="6">
       <div class="demo-basic--circle">
         <div class="block">
-          <router-link :to="{path:'/add', name: 'add'}">
+          <router-link :to="{path:'/addAbout', name: 'addabout'}">
           <el-avatar :size="70" :src="circleUrl" />
           </router-link>
         </div>

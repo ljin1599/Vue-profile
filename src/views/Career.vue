@@ -34,19 +34,6 @@
       remark: update.remark
     })
 
-//------------------------- submit 에러 메세지 -------------------------
-  const rules = reactive<FormRules> ({
-    company: [
-      { required: true,
-          message: 'Please input company',
-          trigger: 'blur'}
-    ],
-    period: [
-      { required: true,
-          message: 'Please input period',
-          trigger: 'blur'}
-    ]
-  })
 //----------------------- submit, reset btn event ------------------------
   const submitForm = async (formEl: FormInstance | undefined) => {
     if (!formEl) return
@@ -88,7 +75,7 @@
 
 <template>
 <h1>경력 사항 {{num ? '수정':'등록'}}</h1>
-  <el-form ref="ruleFormRef" :model="ruleForm" :rules="rules" label-width="120px">
+  <el-form ref="ruleFormRef" :model="ruleForm" label-width="120px">
 
 <el-form-item label="Company" prop="company">
       <el-input v-model="ruleForm.company" />

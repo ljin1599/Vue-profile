@@ -1,23 +1,13 @@
 {
   "profile": [
     {
-      "name": "LeeJinSeong",
-      "date": "1999-11-30T15:00:00.000Z",
-      "phnum": "010-6562-8599",
-      "gender": "Male",
-      "address": "대명동",
-      "edu": "ync",
-      "email": "ljin1599@gmail.com",
-      "id": 1
-    },
-    {
       "front": "vue",
       "back": "javascript",
       "db": "mysql",
       "id": 2
     },
     {
-      "pname": "Todolist",
+      "pname": "Todoliste",
       "pcontent": "vue, node.js, vite, pinia",
       "id": 3
     },
@@ -29,8 +19,18 @@
     {
       "company": "entin",
       "period": "6.27 ~ 8.19",
-      "remark": "-",
+      "remark": "-11",
       "id": 5
+    },
+    {
+      "name": "lee",
+      "date": "1999-12-12T15:00:00.000Z",
+      "phnum": "010",
+      "gender": "Female",
+      "address": "fds",
+      "edu": "ync",
+      "email": "ljin",
+      "id": 6
     }
   ]
 }

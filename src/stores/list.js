@@ -15,7 +15,7 @@ export const BoardListStore = defineStore("profiles", () => {
                 }
                     console.log(profiles.value.list)
     } 
-//-------------------------------- done ------------------------------------
+
     async function readprofile() {
         const res = await axios.get(`/profile/`) 
             try { 
@@ -36,18 +36,6 @@ export const BoardListStore = defineStore("profiles", () => {
             }
     }
 
-    async function detailboard(id) {
-        const res = await axios.get(`/board/${id}`)
-            try { 
-                boards.value.id = res.data.id
-                boards.value.title = res.data.title
-                boards.value.content = res.data.content
-            } catch {
-                console.log(err);
-            }
-            console.log("detailboard")
-    }
-
     async function updateprofile(profiles) {
         const res = await axios.patch(`/profile/${profiles.id}`, 
         { id:profiles.id, name: profiles.name, date: profiles.date, phnum: profiles.phnum, gender: profiles.gender, address: profiles.address, edu: profiles.edu, email: profiles.email, front: profiles.front, back: profiles.back, db: profiles.db, pname: profiles.pname, pcontent: profiles.pcontent , company: profiles.company, period: profiles.period, remark: profiles.remark })
@@ -58,31 +46,8 @@ export const BoardListStore = defineStore("profiles", () => {
             }
             console.log("updateboard")
     }
-
-    async function deleteboard(id) {
-        const res = await axios.delete(`/board/${id}`)
-            try {
-                boards.value = boards.value.filter(board => board.id !== id)
-                console.log(res);
-            } catch {
-                console.log(err);
-            }
-            console.log("delete");
-    }
-
+    
     const ListAll = computed( () => profiles.value ); // boards.value 값에 따라  ListAll 값이 자동으로 바뀐다
 
-    return { addprofile,  readprofile, upreadprofile, detailboard, updateprofile, deleteboard, ListAll };
+    return { addprofile,  readprofile, upreadprofile, updateprofile, ListAll };
 })
-
-/*  axios 사용 특정 페이지 출력
-    async function pageboard(page) {
-        const res = await axios.get(`/board?&_page=${page}&_sort=id&_order=desc&_limit=5`)   // 페이지 번호를 받아서 id를 기준으로 내림 차순 정렬로 5개씩 페이지에 정렬
-        try {
-            boards.value = res.data
-            console.log(boards.value.length)
-            console.log(page)
-        } catch {
-            console.log(err)
-        }
-    }*/

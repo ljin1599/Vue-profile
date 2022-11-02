@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import Main from '@/views/Main.vue'
-import Add from '@/views/Add.vue'
+import addAbout from '@/views/addAbout.vue'
 import About from '@/views/About.vue'
 import readAbout from '@/views/readAbout.vue'
 import Skill from '@/views/Skill.vue'
@@ -20,11 +20,11 @@ import readCareer from '@/views/readCareer.vue'
 export const routes = [
     {path: '/',  components: {
         a: Main,
-        b: Add,
+        b: addAbout,
         },
         props: true
     },
-    {path: '/add', name: 'add', component: Add, props: true},
+    {path: '/addAbout', name: 'addabout', component: addAbout, props: true},
     {path: '/about', name: 'about', component:  About, props: true},
     {path: '/readabout', name:'readabout', component: readAbout, props: true},
     {path:'/skill', name: 'skill', component: Skill, props: true},

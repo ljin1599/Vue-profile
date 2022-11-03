@@ -19,10 +19,10 @@
   const ruleFormRef = ref<FormInstance>() 
 
    interface Props {
-        id: any,
-        company: any,
-        period: any,
-        remark: any
+      id: any,
+      company: any,
+      period: any,
+      remark: any
     }
 
     const update = defineProps<Props>()
@@ -34,67 +34,92 @@
       remark: update.remark
     })
 
+//------------------------- submit 에러 메세지 -------------------------
+  const rules = reactive<FormRules> ({
+    company: [
+      { required: true,
+        message: 'Please input company',
+        trigger: 'blur'}
+    ],
+    period: [
+      { required: true,
+        message: 'Please input period',
+        trigger: 'blur'}
+    ],
+    remark: [
+      { required: false }
+    ]
+  })
+
 //----------------------- submit, reset btn event ------------------------
   const submitForm = async (formEl: FormInstance | undefined) => {
     if (!formEl) return
-      await formEl.validate((valid, fields) => {
-        if (valid) {
-          return addobj(ruleForm) // 여기에 plusedu 적기
-        } else {
-          console.log('error submit!', fields)
-        }
+
+    await formEl.validate((valid, fields) => {
+      if (valid) {
+        return addobj(ruleForm) // 여기에 plusedu 적기
+      } else {
+        console.log('error submit!', fields)
+      }
     })
   }
 
   const updateForm = async (formEl: FormInstance | undefined) => {
     if(!formEl) return
-      await formEl.validate((valid, fields) => {
-        if(valid) {
-          return updateobj(ruleForm)
-        } else {
-          console.log('error submit!', fields)
-        }
-      })
+
+    await formEl.validate((valid, fields) => {
+      if(valid) {
+        return updateobj(ruleForm)
+      } else {
+        console.log('error submit!', fields)
+      }
+    })
   }
 
   const resetForm = (formEl: FormInstance | undefined) => {
-  if (!formEl) return
-  formEl.resetFields()
+    if (!formEl) return
+    
+    formEl.resetFields()
   }
+  
   const num = update.id
 
-    onMounted(() => { // 최초 로딩 시 실행
+  onMounted(() => { // 최초 로딩 시 실행
     if(num) { // num 값이 있으면 상세 데이터 호출한다.
       upreadprofile(update)
       console.log(num)
-   }
+    }
   })
-
-//--------------------------------------------------------------------------
 </script>
 
 <template>
-<h1>경력 사항 {{num ? '수정':'등록'}}</h1>
-  <el-form ref="ruleFormRef" :model="ruleForm" label-width="120px">
+  <h1>경력 사항 {{num ? '수정':'등록'}}</h1>
 
-<el-form-item label="Company" prop="company">
+  <el-form ref="ruleFormRef" :model="ruleForm" :rules="rules" label-width="120px">
+    <!-- 회사 -->
+    <el-form-item label="Company" prop="company">
       <el-input v-model="ruleForm.company" />
     </el-form-item>
+    <!-- 기간 -->
     <el-form-item label="Period" prop="period">
       <el-input v-model="ruleForm.period" />
     </el-form-item>
-        <el-form-item label="Remark" prop="remark">
+    <!-- 기타 -->
+    <el-form-item label="Remark" prop="remark">
       <el-input v-model="ruleForm.remark" />
     </el-form-item>
-
-<!-- 버튼 -->
+    <!-- btn -->
     <el-form-item>
-      <router-link to="/readCareer"><el-button v-if="num" @click="updateForm(ruleFormRef)">update</el-button></router-link>
-      <router-link to="/"><el-button v-if ="!num" type="primary" @click="[submitForm(ruleFormRef)]">Submit</el-button></router-link>
-      <div style="margin-right: 20px;"></div>
-      <el-button v-if ="!num" @click="resetForm(ruleFormRef)">Reset</el-button>
+      <router-link to="/readCareer"><el-button id="btn" v-if="num" @click="updateForm(ruleFormRef)">Update</el-button></router-link>
+      <router-link to="/readCareer"><el-button id="btn" v-if ="!num" type="primary" @click="[submitForm(ruleFormRef)]">Submit</el-button></router-link>
+      <el-button id="btn" v-if ="!num" @click="resetForm(ruleFormRef)">Reset</el-button>
     </el-form-item>
   </el-form>
 </template>
 
-<style></style>
+<style>
+  #btn {
+    width:80px;
+    margin-right: 10px;
+  }
+</style>

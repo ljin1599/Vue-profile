@@ -41,9 +41,9 @@
 
   <div v-for="item of ListAll" :key="item.id">
     <div v-if="item.company !== undefined">
-      <el-descriptions direction="vertical" :column="3" border >
+      <el-descriptions title="career" direction="vertical" :column="3" border >
         <template #extra>
-          <router-link :to="{path:'/Career', name: 'career', params: item}">
+          <router-link :to="{path:'/career', name: 'career', params: item}">
             <el-icon size="large" color="black"><Edit /></el-icon>
           </router-link>
         </template>  

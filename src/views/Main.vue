@@ -235,7 +235,7 @@
 
   .demo-basic .sub-title {
     margin-top: 15px;
-    margin-left: 55px;
+    margin-left: -50px;
     font-size: 30px;
     color: var(--el-text-color-secondary);
   }

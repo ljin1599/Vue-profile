@@ -7,13 +7,13 @@ export const BoardListStore = defineStore("profiles", () => {
     const profiles = ref([ ])
 
     async function addprofile(list) {
-            const res = await axios.post(`/profile`, list) // 양방향  데이터 통신 v-model 이용 값 받아오기
-                try {
-                    profiles.value = [...profiles.value, res.data]; // 서버에서 데이터를 목록으로 보내므로 바로 할당하여 사용할 수 있다.
-                } catch {
-                    console.log(err);
-                }
-                    console.log(profiles.value.list)
+        const res = await axios.post(`/profile`, list) // 양방향  데이터 통신 v-model 이용 값 받아오기
+            try {
+                profiles.value = [...profiles.value, res.data]; // 서버에서 데이터를 목록으로 보내므로 바로 할당하여 사용할 수 있다.
+            } catch {
+                console.log(err);
+            }
+            console.log("addprofile")
     } 
 
     async function readprofile() {
@@ -23,7 +23,7 @@ export const BoardListStore = defineStore("profiles", () => {
             } catch {
                 console.log(err);
             }
-                console.log(profiles.value)
+            console.log("readprofile")
     }
     
     async function upreadprofile(profiles) {
@@ -34,6 +34,7 @@ export const BoardListStore = defineStore("profiles", () => {
             } catch {
                 console.log(err);
             }
+            console.log("upreadprofile")
     }
 
     async function updateprofile(profiles) {
@@ -44,10 +45,10 @@ export const BoardListStore = defineStore("profiles", () => {
             } catch {
                 console.log(err);
             }
-            console.log("updateboard")
+            console.log("updateprofile")
     }
     
-    const ListAll = computed( () => profiles.value ); // boards.value 값에 따라  ListAll 값이 자동으로 바뀐다
+    const ListAll = computed(() => profiles.value); // boards.value 값에 따라  ListAll 값이 자동으로 바뀐다
 
     return { addprofile,  readprofile, upreadprofile, updateprofile, ListAll };
 })

@@ -1,36 +1,36 @@
 {
   "profile": [
     {
-      "front": "vue",
-      "back": "javascript",
-      "db": "mysql",
+      "name": "JinSeongLee",
+      "date": "1999-11-30T15:00:00.000Z",
+      "phnum": "010-6562-8599",
+      "gender": "Male",
+      "address": "대명동",
+      "edu": "영남이공대학교",
+      "email": "ljin1599@gmail.com",
+      "id": 1
+    },
+    {
+      "front": "Vue, HTML, CSS",
+      "back": "Javascript, PHP, Java",
+      "db": "SQL",
       "id": 2
     },
     {
-      "pname": "Todoliste",
-      "pcontent": "vue, node.js, vite, pinia",
+      "pname": "Vue_Board",
+      "pcontent": "Simple Board / 22.07.18. ~ 22.08.07",
       "id": 3
     },
     {
-      "pname": "vue board",
-      "pcontent": "vue, node.js, vite, pinia, axios, json-server",
+      "pname": "Vue_profile",
+      "pcontent": "simple profile / 22.08.08. ~ 22.08.31",
       "id": 4
     },
     {
-      "company": "entin",
-      "period": "6.27 ~ 8.19",
-      "remark": "-11",
+      "company": "Entin",
+      "period": "22.06. ~ 22. 08.",
+      "remark": "-",
       "id": 5
-    },
-    {
-      "name": "lee",
-      "date": "1999-12-12T15:00:00.000Z",
-      "phnum": "010",
-      "gender": "Female",
-      "address": "fds",
-      "edu": "ync",
-      "email": "ljin",
-      "id": 6
     }
   ]
 }

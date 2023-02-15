@@ -8,4 +8,4 @@ This template should help get you started developing with Vue 3 and TypeScript i
 
 ### Vue Profile
 
-<img src="https://user-images.githubusercontent.com/84770467/218947598-6a445530-b28f-4e8a-a2f0-a1c7a1d9ab41.jpg" width="1200" height="800" align="center">
+<img src="https://user-images.githubusercontent.com/84770467/218947598-6a445530-b28f-4e8a-a2f0-a1c7a1d9ab41.jpg" width="1200" height="600" align="center">
